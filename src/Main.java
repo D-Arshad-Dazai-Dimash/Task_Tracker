@@ -93,17 +93,20 @@ public class Main {
                     }
                 }
 
-
                 if (!deleted) {
                     System.out.println("Task with id " + id + " not found!");
                     return;
                 }
 
-
                 taskRepository.writeTasks(allTasks);
                 System.out.println("Task deleted!");
-
-
+            }
+            case "mark-in-progress" -> {
+                taskRepository.writeTasks(StatusChanger.changeStatus(allTasks, args));
+                return;
+            }
+            case "mark-done" -> {
+                taskRepository.writeTasks(StatusChanger.changeStatus(allTasks, args));
             }
             default -> System.out.println("Unknown command");
         }
