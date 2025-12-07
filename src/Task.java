@@ -119,4 +119,14 @@ public class Task {
         return task;
     }
 
+    @Override
+    public String toString() {
+        return  "Task{\n" +
+                "  \"id\": " + getId() + ",\n" +
+                "  \"description\": \"" + getDescription() + "\",\n" +
+                "  \"status\": \"" + getStatus() + "\",\n" +
+                "  \"createdAt\": \"" + getCreatedAt() + "\",\n" +
+                "  \"updatedAt\": \"" + getUpdatedAt() + "\"\n" +
+                "}";
+    }
 }
